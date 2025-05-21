@@ -1,0 +1,21 @@
+services:
+  chrome-vnc-rdp:
+    container_name: chrome-vnc-rdp
+    build: .
+    volumes:
+      - ../../docker-data/chrome-vnc-rdp/home:/home/chrome
+    ports:
+      - "5900:5900"   # VNC
+      - "3389:3389"   # RDP
+    environment:
+      - TZ=Europe/Copenhagen
+      - VNC_PASSWORD=yourpassword
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    networks:
+      - docker-network
+networks:
+  docker-network:
+    external: true
+
