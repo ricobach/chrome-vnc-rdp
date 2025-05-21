@@ -1,5 +1,4 @@
 FROM ubuntu:24.04
-MAINTAINER SFoxDev <admin@sfoxdev.com>
 
 ENV VNC_PASSWORD="" \
     DEBIAN_FRONTEND="noninteractive" \
